@@ -1,6 +1,8 @@
 name: Trivy-Docker
 on:
   workflow_call:     
+
+jobs:
       - name: Build an image from Dockerfile
         run: |
           docker build -t verdant-sphere:latest .

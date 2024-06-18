@@ -27,3 +27,6 @@ jobs:
     name: "sonar-scan"
     needs: [test]
     uses: ./.github/workflows/sonar-scan.yaml
+    with:
+      version: "2.3.0"
+

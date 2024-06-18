@@ -17,4 +17,4 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.3.0 
       env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_TOKEN: b9f8dcbd7ae2d97e77ea599cd85e2f8fadc8d267

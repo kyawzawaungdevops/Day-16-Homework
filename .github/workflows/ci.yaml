@@ -22,3 +22,8 @@ jobs:
     uses: ./.github/workflows/test.yaml
     with:
       version: "8.2"
+
+  Sonar-Cloud-Scan:
+    name: "sonar-scan"
+    needs: [test]
+    uses: ./.github/workflows/sonar-scan.yaml

@@ -32,3 +32,7 @@ jobs:
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+  test:
+    name: "Test"
+    needs: [Sonar-Cloud-Scan]
+    uses: ./.github/workflows/trivy-fs.yaml

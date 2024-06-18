@@ -30,7 +30,7 @@ jobs:
         run: |
           docker build -t ${{ inputs.image-ref }} .
 
-      - name: Run Trivy vulnerability scanner
+      - name: Run Trivy docker image scanner
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ inputs.image-ref }}

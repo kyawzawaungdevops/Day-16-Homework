@@ -29,4 +29,5 @@ jobs:
     uses: ./.github/workflows/sonar-scan.yaml
     with:
       version: "2.3.0"
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 

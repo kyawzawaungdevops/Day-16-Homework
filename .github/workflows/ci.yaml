@@ -42,7 +42,7 @@ jobs:
     needs: [trivy-fs-scan]
     uses: ./.github/workflows/trivy-docker-image-scan.yaml
     with:
-          image-ref: 'verdant-sphere:latest'
-          format: 'table'
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
+          image-ref: verdant-sphere:latest
+          format: table
+          vuln-type: os,library
+          severity: CRITICAL,HIGH,MEDIUM

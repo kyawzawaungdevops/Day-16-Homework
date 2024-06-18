@@ -1,8 +1,11 @@
 name: CI Workflow
 
-# trigger
+# Trigger
 on:
   push:
+    branches:
+      - main
+      - dev
   workflow_dispatch:
   pull_request:
     branches:
@@ -12,22 +15,22 @@ on:
 jobs:
   build:
     name: "Build"
-    uses: ./.github/workflows/build.yaml
+    uses: ./.github/workflows/build.yaml@main
     with:
       version: "8.2"
 
   test:
     name: "Test"
-    needs: [build]
-    uses: ./.github/workflows/test.yaml
+    needs: build
+    uses: ./.github/workflows/test.yaml@main
     with:
       version: "8.2"
 
-  Sonar-Cloud-Scan:
-    name: "sonar-scan"
-    needs: [test]
-    uses: ./.github/workflows/sonar-scan.yaml
+  sonar-cloud-scan:
+    name: "Sonar Cloud Scan"
+    needs: test
+    uses: ./.github/workflows/sonar-scan.yaml@main
     with:
       version: "2.3.0"
+    secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-

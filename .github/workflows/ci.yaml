@@ -34,6 +34,7 @@ jobs:
 
   Trivy-fs-scan:
     name: "trivy-fs-scan"
+    needs: [test]
     uses: ./.github/workflows/trivy-fs.yaml
 
   Trivy-image-scan:

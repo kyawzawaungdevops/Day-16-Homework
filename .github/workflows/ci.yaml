@@ -34,7 +34,6 @@ jobs:
 
   Trivy-fs-scan:
     name: "trivy-fs-scan"
-    needs: [Sonar-Cloud-Scan]
     uses: ./.github/workflows/trivy-fs.yaml
 
   Trivy-image-scan:

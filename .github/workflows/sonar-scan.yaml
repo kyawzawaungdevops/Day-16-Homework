@@ -21,7 +21,4 @@ jobs:
       uses: sonarsource/sonarcloud-github-action@v2.3.0
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        args: >
-          -Dsonar.projectKey=verdant-sphere_verdant-sphere
-          -Dsonar.organization=verdant-sphere
+
